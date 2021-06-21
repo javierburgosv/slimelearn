@@ -172,6 +172,7 @@ Sent if something went wrong. It usualy includes a context message with some ext
 This packages will be sent by the server following the mode set in the configuration criteria. It carries all the information related to the enviroment (player possition, distance to the walls, etc). 
 
 **Data**
+
 Contains the following sections:
 - player: Player object with basic information.
 - sight: List of entitie objects with their basic information (such as platforms).
@@ -192,7 +193,7 @@ Contains the following sections:
 		},
 		"sight": [
 			{
-				"name": "",
+			    "name": "",
 				"x": 0,
 				"y": 0,
 			},
