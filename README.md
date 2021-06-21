@@ -183,27 +183,27 @@ Contains the following sections:
 **Example**
 ```JSON
 {
-	"responseType": "OUTPUT",
-	"code": 200,
-	"data": {
-		"player": {
-			"state": "idle",
-			"x": 0,
-			"y": 0,
-		},
-		"sight": [
-			{
-			    "name": "",
-				"x": 0,
-				"y": 0,
-			},
-		],
-		"limits": {
-			"right": 0,
-			"left": 0,
-		},
-		"money": 0,
-		"screen": []
-	}
+    "responseType": "OUTPUT",
+    "code": 200,
+    "data": {
+        "player": {
+            "state": "idle",
+            "x": 0,
+            "y": 0,
+        },
+        "sight": [
+            {
+                "name": "",
+                "x": 0,
+                "y": 0,
+            },
+        ],
+        "limits": {
+            "right": 0,
+            "left": 0,
+        },
+        "money": 0,
+        "screen": []
+    }
 }
 ```
