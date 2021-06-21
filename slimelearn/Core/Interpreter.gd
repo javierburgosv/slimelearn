@@ -30,7 +30,7 @@ var _WRONG_REQUEST = {
 #Data output template
 var _OUTPUT = {
 	"responseType": "OUTPUT",
-	"code": 400,
+	"code": 200,
 	"data": {
 		"player": {
 			"state": "idle",
@@ -38,11 +38,6 @@ var _OUTPUT = {
 			"y": 0,
 		},
 		"sight": [
-			{
-				"name": "",
-				"x": 0,
-				"y": 0,
-			},
 			{
 				"name": "",
 				"x": 0,
