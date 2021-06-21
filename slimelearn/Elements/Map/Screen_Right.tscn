@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Graphics/Map/Wall-v2.png" type="Texture" id=1]
+
+[node name="Right" type="Node2D"]
+position = Vector2( 111.297, 9.47397 )
+rotation = -3.14159
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.703423, 1.47395 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( -0.703423, -14.526 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( -0.703423, -30.526 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( -0.703423, -46.526 )
+texture = ExtResource( 1 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( -0.703423, -62.526 )
+texture = ExtResource( 1 )
+
+[node name="Sprite6" type="Sprite" parent="."]
+position = Vector2( -0.703423, -78.526 )
+texture = ExtResource( 1 )
+
+[node name="Sprite7" type="Sprite" parent="."]
+position = Vector2( -0.703423, -94.526 )
+texture = ExtResource( 1 )
+
+[node name="Sprite8" type="Sprite" parent="."]
+position = Vector2( -0.703423, -110.526 )
+texture = ExtResource( 1 )
+
+[node name="Sprite9" type="Sprite" parent="."]
+position = Vector2( -0.703423, -125.526 )
+texture = ExtResource( 1 )
+
+[node name="Sprite10" type="Sprite" parent="."]
+position = Vector2( -0.703423, -140.526 )
+texture = ExtResource( 1 )
+
+[node name="Sprite11" type="Sprite" parent="."]
+position = Vector2( -0.703423, -156.526 )
+texture = ExtResource( 1 )

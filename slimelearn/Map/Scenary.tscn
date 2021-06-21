@@ -1,0 +1,1029 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://Elements/Objects/Platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Elements/Map/Screen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Elements/Objects/Money.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Elements/Objects/Rock.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Elements/Objects/TempPlatform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Elements/Objects/WallSlider.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Elements/Objects/END.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Graphics/Map/negro.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Map/Corner-v2.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Map/sliders/inner corner.png" type="Texture" id=10]
+[ext_resource path="res://Elements/Objects/slider.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Elements/Objects/StickWall.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Map/Scenary.gd" type="Script" id=13]
+[ext_resource path="res://Graphics/Map/moving plat.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/UI/tutorialPC/mouse1.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/UI/tutorialPC/keyboard.png" type="Texture" id=16]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 16, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 50, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 16 )
+region = Rect2( 0, 16, 50, 16 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 6.6958, 7.54729 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 6.50208, 8.12843 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 8.50237, 1828.8 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 18.3305, 2.79614 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 10, 127.895 )
+
+[sub_resource type="Animation" id=12]
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+
+[sub_resource type="Animation" id=13]
+length = 3.5
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 1.5, 3, 3.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 1.5, 3, 3.5 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 1.5, 3, 3.5 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 1.5, 3, 3.5 )
+}
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 57.5024, 275.47 )
+
+[node name="Map" type="Node2D"]
+script = ExtResource( 13 )
+
+[node name="Basicas1" parent="." instance=ExtResource( 2 )]
+
+[node name="Platform" parent="Basicas1" instance=ExtResource( 1 )]
+position = Vector2( 93.9962, 148.323 )
+
+[node name="Platform2" parent="Basicas1" instance=ExtResource( 1 )]
+position = Vector2( 78.9756, 148.059 )
+
+[node name="Platform6" parent="Basicas1" instance=ExtResource( 1 )]
+position = Vector2( 35.7581, 135.147 )
+
+[node name="Platform5" parent="Basicas1" instance=ExtResource( 1 )]
+position = Vector2( 20.7375, 134.883 )
+
+[node name="Platform7" parent="Basicas1" instance=ExtResource( 1 )]
+position = Vector2( 20.7375, 104.159 )
+
+[node name="Platform10" parent="Basicas1" instance=ExtResource( 1 )]
+position = Vector2( 20.3969, 81.6822 )
+
+[node name="Platform11" parent="Basicas1" instance=ExtResource( 1 )]
+position = Vector2( 94.0327, 15.4314 )
+
+[node name="Platform4" parent="Basicas1" instance=ExtResource( 1 )]
+position = Vector2( 94.7132, 118.927 )
+
+[node name="Platform3" parent="Basicas1" instance=ExtResource( 1 )]
+position = Vector2( 79.6926, 118.663 )
+
+[node name="Platform9" parent="Basicas1" instance=ExtResource( 1 )]
+position = Vector2( 34.9129, 43.2112 )
+
+[node name="Platform13" parent="Basicas1" instance=ExtResource( 1 )]
+position = Vector2( 49.666, 43.2112 )
+
+[node name="Money2" parent="Basicas1" instance=ExtResource( 3 )]
+position = Vector2( 78.1181, 75.7028 )
+
+[node name="Rock" parent="Basicas1" instance=ExtResource( 4 )]
+position = Vector2( 79.5734, 85.2935 )
+
+[node name="Rock2" parent="Basicas1" instance=ExtResource( 4 )]
+position = Vector2( 31, 1 )
+
+[node name="Tutorial" type="AnimatedSprite" parent="Basicas1"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 25.0608, 214.378 )
+frames = SubResource( 3 )
+playing = true
+
+[node name="Tutorial 2" type="AnimatedSprite" parent="Basicas1"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 75.2173, 215.246 )
+frames = SubResource( 6 )
+frame = 1
+playing = true
+
+[node name="Basicas2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -174 )
+
+[node name="Platform" parent="Basicas2" instance=ExtResource( 1 )]
+position = Vector2( 93.9603, 130.731 )
+
+[node name="Platform2" parent="Basicas2" instance=ExtResource( 1 )]
+position = Vector2( 78.8651, 130.731 )
+
+[node name="Platform4" parent="Basicas2" instance=ExtResource( 1 )]
+position = Vector2( 36.6399, 111.109 )
+
+[node name="Platform3" parent="Basicas2" instance=ExtResource( 1 )]
+position = Vector2( 21.3557, 111.109 )
+
+[node name="Platform5" parent="Basicas2" instance=ExtResource( 1 )]
+position = Vector2( 43.1667, 68.845 )
+
+[node name="Platform6" parent="Basicas2" instance=ExtResource( 1 )]
+position = Vector2( 58.1667, 68.845 )
+
+[node name="Platform7" parent="Basicas2" instance=ExtResource( 1 )]
+position = Vector2( 57.7043, 8.57628 )
+
+[node name="Money" parent="Basicas2" instance=ExtResource( 3 )]
+position = Vector2( 30.3688, 165.798 )
+id = 1
+
+[node name="Rock" parent="Basicas2" instance=ExtResource( 4 )]
+position = Vector2( 89.8508, 38.4916 )
+
+[node name="Money2" parent="Basicas2" instance=ExtResource( 3 )]
+position = Vector2( 89, 29.7894 )
+id = 2
+
+[node name="Basicas3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0.022018, -347.964 )
+
+[node name="Platform" parent="Basicas3" instance=ExtResource( 1 )]
+position = Vector2( 57.8343, 146.043 )
+
+[node name="Platform2" parent="Basicas3" instance=ExtResource( 1 )]
+position = Vector2( 93.8527, 69.8541 )
+
+[node name="Platform3" parent="Basicas3" instance=ExtResource( 1 )]
+position = Vector2( 94.4644, 6.21503 )
+
+[node name="Platform4" parent="Basicas3" instance=ExtResource( 1 )]
+position = Vector2( 20.0377, 5.80719 )
+
+[node name="Rock3" parent="Basicas3" instance=ExtResource( 4 )]
+position = Vector2( 20.7396, 112.161 )
+
+[node name="Rock5" parent="Basicas3" instance=ExtResource( 4 )]
+position = Vector2( 44.3578, 49.3949 )
+
+[node name="Rock4" parent="Basicas3" instance=ExtResource( 4 )]
+position = Vector2( 93.7396, 112.161 )
+
+[node name="Rock2" parent="Basicas3" instance=ExtResource( 4 )]
+position = Vector2( 75.4074, 153.628 )
+
+[node name="Money" parent="Basicas3" instance=ExtResource( 3 )]
+position = Vector2( 20, 102.789 )
+id = 3
+
+[node name="Basica4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -521 )
+
+[node name="Platform" parent="Basica4" instance=ExtResource( 1 )]
+position = Vector2( 37.1948, 149.322 )
+
+[node name="Platform2" parent="Basica4" instance=ExtResource( 1 )]
+position = Vector2( 19.8356, 118.387 )
+
+[node name="Platform4" parent="Basica4" instance=ExtResource( 1 )]
+position = Vector2( 19.8356, 86.9224 )
+
+[node name="Platform5" parent="Basica4" instance=ExtResource( 1 )]
+position = Vector2( 20.2102, 53.585 )
+
+[node name="Platform6" parent="Basica4" instance=ExtResource( 1 )]
+position = Vector2( 20.5439, 21.2151 )
+
+[node name="Platform3" parent="Basica4" instance=ExtResource( 1 )]
+position = Vector2( 95.1255, 93.2902 )
+
+[node name="Rock" parent="Basica4" instance=ExtResource( 4 )]
+position = Vector2( 19.378, 156.948 )
+
+[node name="Rock3" parent="Basica4" instance=ExtResource( 4 )]
+position = Vector2( 44.4746, 71.9187 )
+rotation = -1.5708
+
+[node name="Rock4" parent="Basica4" instance=ExtResource( 4 )]
+position = Vector2( 44.4746, 35.9187 )
+rotation = -1.5708
+
+[node name="Rock5" parent="Basica4" instance=ExtResource( 4 )]
+position = Vector2( 44.4746, 10.1687 )
+
+[node name="Rock2" parent="Basica4" instance=ExtResource( 4 )]
+position = Vector2( 94.9055, 153.948 )
+
+[node name="Money" parent="Basica4" instance=ExtResource( 3 )]
+position = Vector2( 20, 176.789 )
+id = 4
+
+[node name="Money2" parent="Basica4" instance=ExtResource( 3 )]
+position = Vector2( 94.8668, 91.5418 )
+id = 5
+
+[node name="Money3" parent="Basica4" instance=ExtResource( 3 )]
+position = Vector2( 20.0893, 51.3357 )
+id = 6
+
+[node name="Money4" parent="Basica4" instance=ExtResource( 3 )]
+position = Vector2( 94.3796, 145.725 )
+id = 34
+
+[node name="Temporales1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -695 )
+
+[node name="TempPlatform" parent="Temporales1" instance=ExtResource( 5 )]
+position = Vector2( 66.8183, 162.492 )
+
+[node name="TempPlatform2" parent="Temporales1" instance=ExtResource( 5 )]
+position = Vector2( 36.7124, 96.3139 )
+
+[node name="TempPlatform4" parent="Temporales1" instance=ExtResource( 5 )]
+position = Vector2( 36.3888, 22.1363 )
+
+[node name="TempPlatform5" parent="Temporales1" instance=ExtResource( 5 )]
+position = Vector2( 87.5575, 23.1363 )
+
+[node name="Platform5" parent="Temporales1" instance=ExtResource( 1 )]
+position = Vector2( 20.2009, 53.7396 )
+
+[node name="Platform2" parent="Temporales1" instance=ExtResource( 1 )]
+position = Vector2( 35.6328, 124.917 )
+
+[node name="Rock" parent="Temporales1" instance=ExtResource( 4 )]
+position = Vector2( 19.9149, 132.127 )
+
+[node name="Money5" parent="Temporales1" instance=ExtResource( 3 )]
+position = Vector2( 19.8555, 122.945 )
+id = 7
+
+[node name="Temporal12" parent="." instance=ExtResource( 2 )]
+position = Vector2( -0.0467224, -868.877 )
+
+[node name="Rock" parent="Temporal12" instance=ExtResource( 4 )]
+position = Vector2( 37.1763, 167.263 )
+
+[node name="Rock2" parent="Temporal12" instance=ExtResource( 4 )]
+position = Vector2( 19.6769, 167.263 )
+
+[node name="TempPlatform6" parent="Temporal12" instance=ExtResource( 5 )]
+position = Vector2( 80.745, 167.263 )
+
+[node name="TempPlatform7" parent="Temporal12" instance=ExtResource( 5 )]
+position = Vector2( 57.745, 109.263 )
+
+[node name="TempPlatform8" parent="Temporal12" instance=ExtResource( 5 )]
+position = Vector2( 80.809, 50.9149 )
+
+[node name="Platform" parent="Temporal12" instance=ExtResource( 1 )]
+position = Vector2( 20, 128 )
+
+[node name="Platform2" parent="Temporal12" instance=ExtResource( 1 )]
+position = Vector2( 96.0391, 78.5559 )
+
+[node name="Platform3" parent="Temporal12" instance=ExtResource( 1 )]
+position = Vector2( 80.92, 56.8223 )
+
+[node name="Platform4" parent="Temporal12" instance=ExtResource( 1 )]
+position = Vector2( 19.92, 56.8223 )
+
+[node name="Money6" parent="Temporal12" instance=ExtResource( 3 )]
+position = Vector2( 79.9022, 156.402 )
+id = 8
+
+[node name="Money7" parent="Temporal12" instance=ExtResource( 3 )]
+position = Vector2( 19.8575, 55.0861 )
+id = 9
+
+[node name="Rock3" parent="Temporal12" instance=ExtResource( 4 )]
+position = Vector2( 41.4209, 23.6265 )
+rotation = 1.5708
+
+[node name="Rock4" parent="Temporal12" instance=ExtResource( 4 )]
+position = Vector2( 41.4209, 23.6264 )
+
+[node name="Temporal13" parent="." instance=ExtResource( 2 )]
+position = Vector2( -0.0467224, -1041.88 )
+
+[node name="Platform" parent="Temporal13" instance=ExtResource( 1 )]
+position = Vector2( 21.0128, 156.887 )
+
+[node name="Platform2" parent="Temporal13" instance=ExtResource( 1 )]
+position = Vector2( 21.3278, 189.015 )
+
+[node name="Platform3" parent="Temporal13" instance=ExtResource( 1 )]
+position = Vector2( 94.1315, 30.7523 )
+
+[node name="Platform5" parent="Temporal13" instance=ExtResource( 1 )]
+position = Vector2( 94.7615, -0.745728 )
+
+[node name="Platform4" parent="Temporal13" instance=ExtResource( 1 )]
+position = Vector2( 20.1315, 48.7523 )
+
+[node name="TempPlatform" parent="Temporal13" instance=ExtResource( 5 )]
+position = Vector2( 20.3292, 132.49 )
+
+[node name="TempPlatform2" parent="Temporal13" instance=ExtResource( 5 )]
+position = Vector2( 39.4669, 101.404 )
+
+[node name="TempPlatform4" parent="Temporal13" instance=ExtResource( 5 )]
+position = Vector2( 94.2941, 145.577 )
+
+[node name="TempPlatform3" parent="Temporal13" instance=ExtResource( 5 )]
+position = Vector2( 78.7873, 82.3079 )
+
+[node name="Money" parent="Temporal13" instance=ExtResource( 3 )]
+position = Vector2( 94.4008, 134.642 )
+id = 10
+
+[node name="Money2" parent="Temporal13" instance=ExtResource( 3 )]
+position = Vector2( 19.7517, 47.6712 )
+id = 33
+
+[node name="Temporales2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -0.00379932, -1215.87 )
+
+[node name="Platform4" parent="Temporales2" instance=ExtResource( 1 )]
+position = Vector2( 94.2704, 143.861 )
+
+[node name="Platform6" parent="Temporales2" instance=ExtResource( 1 )]
+position = Vector2( 79.0139, 143.95 )
+
+[node name="Platform8" parent="Temporales2" instance=ExtResource( 1 )]
+position = Vector2( 34.7936, 5.866 )
+
+[node name="TempPlatform6" parent="Temporales2" instance=ExtResource( 5 )]
+position = Vector2( 60.4832, 115.387 )
+
+[node name="TempPlatform7" parent="Temporales2" instance=ExtResource( 5 )]
+position = Vector2( 33.3798, 99.2141 )
+
+[node name="TempPlatform8" parent="Temporales2" instance=ExtResource( 5 )]
+position = Vector2( 59.4589, 57.2709 )
+
+[node name="Rock2" parent="Temporales2" instance=ExtResource( 4 )]
+position = Vector2( 18.71, 13.7031 )
+
+[node name="Money" parent="Temporales2" instance=ExtResource( 3 )]
+position = Vector2( 94, 141.789 )
+id = 11
+
+[node name="Ramps1" parent="." instance=ExtResource( 2 )]
+position = Vector2( -0.00941432, -1389.82 )
+
+[node name="Platform" parent="Ramps1" instance=ExtResource( 1 )]
+position = Vector2( 48.8486, 144.648 )
+
+[node name="Platform2" parent="Ramps1" instance=ExtResource( 1 )]
+position = Vector2( 64.4162, 144.648 )
+
+[node name="Platform4" parent="Ramps1" instance=ExtResource( 1 )]
+position = Vector2( 18.8903, 94.0461 )
+
+[node name="Platform3" parent="Ramps1" instance=ExtResource( 1 )]
+position = Vector2( 94.7318, 43.2133 )
+
+[node name="Platform5" parent="Ramps1" instance=ExtResource( 1 )]
+position = Vector2( 84.0295, 13.8781 )
+
+[node name="Platform6" parent="Ramps1" instance=ExtResource( 1 )]
+position = Vector2( 94.2561, -10.9272 )
+
+[node name="Rock" parent="Ramps1" instance=ExtResource( 4 )]
+position = Vector2( 18.8092, 120.367 )
+
+[node name="Rock3" parent="Ramps1" instance=ExtResource( 4 )]
+position = Vector2( 95.8092, 120.367 )
+
+[node name="Slider" parent="Ramps1" instance=ExtResource( 11 )]
+position = Vector2( 78.4943, 81.8419 )
+rotation = -1.5708
+
+[node name="Rock4" parent="Ramps1" instance=ExtResource( 4 )]
+position = Vector2( 95.3787, 81.9991 )
+
+[node name="WallSliderPack2" type="Node2D" parent="Ramps1"]
+position = Vector2( 17.8414, 26.5912 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="WallSlider" parent="Ramps1/WallSliderPack2" instance=ExtResource( 6 )]
+position = Vector2( 0.234863, -0.256592 )
+rotation = 1.5708
+xForce = 110
+
+[node name="Colision" type="StaticBody2D" parent="Ramps1/WallSliderPack2/WallSlider"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramps1/WallSliderPack2/WallSlider/Colision"]
+position = Vector2( 17, -6.10352e-05 )
+rotation = 1.5708
+shape = SubResource( 7 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ramps1/WallSliderPack2/WallSlider/Colision"]
+position = Vector2( 17, -6.10352e-05 )
+shape = SubResource( 8 )
+one_way_collision = true
+
+[node name="Fixes" type="Sprite" parent="Ramps1/WallSliderPack2"]
+position = Vector2( -14.8352, 15.248 )
+texture = ExtResource( 8 )
+
+[node name="Fixes2" type="Sprite" parent="Ramps1/WallSliderPack2"]
+position = Vector2( -14.8352, 0.247986 )
+texture = ExtResource( 8 )
+
+[node name="Fixes3" type="Sprite" parent="Ramps1/WallSliderPack2"]
+position = Vector2( -14.8352, 0.247986 )
+texture = ExtResource( 10 )
+
+[node name="Sprite2" type="Sprite" parent="Ramps1/WallSliderPack2"]
+position = Vector2( 0.252251, 15.8032 )
+texture = ExtResource( 9 )
+
+[node name="Money" parent="Ramps1" instance=ExtResource( 3 )]
+position = Vector2( 17.8229, 178.933 )
+id = 12
+
+[node name="Money2" parent="Ramps1" instance=ExtResource( 3 )]
+position = Vector2( 95.7349, 110.76 )
+id = 13
+
+[node name="Money3" parent="Ramps1" instance=ExtResource( 3 )]
+position = Vector2( 83.6625, 12.7381 )
+id = 14
+
+[node name="Ramps2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -0.00941432, -1563.75 )
+
+[node name="Platform" parent="Ramps2" instance=ExtResource( 1 )]
+position = Vector2( 26.1561, 148.826 )
+
+[node name="Platform2" parent="Ramps2" instance=ExtResource( 1 )]
+position = Vector2( 94.8682, 91.5517 )
+
+[node name="Platform3" parent="Ramps2" instance=ExtResource( 1 )]
+position = Vector2( 22.3147, 43.4722 )
+
+[node name="Rock" parent="Ramps2" instance=ExtResource( 4 )]
+position = Vector2( 94.498, 130.391 )
+
+[node name="Rock4" parent="Ramps2" instance=ExtResource( 4 )]
+position = Vector2( 93.7155, 26.5043 )
+
+[node name="Rock2" parent="Ramps2" instance=ExtResource( 4 )]
+position = Vector2( 19.8144, 82.0748 )
+
+[node name="Rock3" parent="Ramps2" instance=ExtResource( 4 )]
+position = Vector2( 69.2947, 62.8702 )
+
+[node name="Slider2" parent="Ramps2" instance=ExtResource( 11 )]
+position = Vector2( 78.2821, 129.611 )
+rotation = -1.5708
+
+[node name="Slider4" parent="Ramps2" instance=ExtResource( 11 )]
+position = Vector2( 76.4996, 25.7242 )
+rotation = -1.5708
+
+[node name="Slider3" parent="Ramps2" instance=ExtResource( 11 )]
+position = Vector2( 36.8677, 81.9384 )
+
+[node name="Money" parent="Ramps2" instance=ExtResource( 3 )]
+position = Vector2( 19.0557, 73.414 )
+id = 16
+
+[node name="Money2" parent="Ramps2" instance=ExtResource( 3 )]
+position = Vector2( 94.1875, 121.525 )
+id = 15
+
+[node name="Ramps3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -0.00616074, -1736.6 )
+
+[node name="TempPlatform" parent="Ramps3" instance=ExtResource( 5 )]
+position = Vector2( 36.7217, 178.006 )
+
+[node name="TempPlatform2" parent="Ramps3" instance=ExtResource( 5 )]
+position = Vector2( 19.2678, 141.965 )
+
+[node name="TempPlatform3" parent="Ramps3" instance=ExtResource( 5 )]
+position = Vector2( 38.7931, 105.709 )
+
+[node name="TempPlatform4" parent="Ramps3" instance=ExtResource( 5 )]
+position = Vector2( 65.4377, 87.9473 )
+
+[node name="TempPlatform5" parent="Ramps3" instance=ExtResource( 5 )]
+position = Vector2( 18.6881, 55.516 )
+
+[node name="Slider" parent="Ramps3" instance=ExtResource( 11 )]
+position = Vector2( 37.4827, 141.087 )
+
+[node name="Slider3" parent="Ramps3" instance=ExtResource( 11 )]
+position = Vector2( 21.1311, -11.0771 )
+
+[node name="Slider2" parent="Ramps3" instance=ExtResource( 11 )]
+position = Vector2( 95.4022, 89.1559 )
+rotation = -1.5708
+
+[node name="Platform" parent="Ramps3" instance=ExtResource( 1 )]
+position = Vector2( 79.7984, 154.375 )
+
+[node name="Platform2" parent="Ramps3" instance=ExtResource( 1 )]
+position = Vector2( 95.0213, 20.9126 )
+
+[node name="Platform3" parent="Ramps3" instance=ExtResource( 1 )]
+position = Vector2( 79.8185, 20.9126 )
+
+[node name="Money" parent="Ramps3" instance=ExtResource( 3 )]
+position = Vector2( 36.2628, 169.004 )
+id = 17
+
+[node name="Money2" parent="Ramps3" instance=ExtResource( 3 )]
+position = Vector2( 17.931, 46.0581 )
+id = 18
+
+[node name="Ramp4" parent="." instance=ExtResource( 2 )]
+position = Vector2( -0.00114441, -1908.6 )
+
+[node name="Platform4" parent="Ramp4" instance=ExtResource( 1 )]
+position = Vector2( 64.4261, 164.946 )
+
+[node name="Platform5" parent="Ramp4" instance=ExtResource( 1 )]
+position = Vector2( 49.2234, 138.474 )
+
+[node name="Platform6" parent="Ramp4" instance=ExtResource( 1 )]
+position = Vector2( 78.1933, 115.448 )
+
+[node name="Platform7" parent="Ramp4" instance=ExtResource( 1 )]
+position = Vector2( 56.0956, 84.4313 )
+
+[node name="Platform8" parent="Ramp4" instance=ExtResource( 1 )]
+position = Vector2( 49.0956, 13.4313 )
+
+[node name="Platform9" parent="Ramp4" instance=ExtResource( 1 )]
+position = Vector2( 65.0956, 13.4313 )
+
+[node name="Rock" parent="Ramp4" instance=ExtResource( 4 )]
+position = Vector2( 95.3313, 123.176 )
+
+[node name="Rock3" parent="Ramp4" instance=ExtResource( 4 )]
+position = Vector2( 95.3313, 55.1755 )
+
+[node name="Rock4" parent="Ramp4" instance=ExtResource( 4 )]
+position = Vector2( 19.087, 55.1755 )
+
+[node name="Money" parent="Ramp4" instance=ExtResource( 3 )]
+position = Vector2( 94.9685, 114.276 )
+id = 19
+
+[node name="Money2" parent="Ramp4" instance=ExtResource( 3 )]
+position = Vector2( 18.2025, 46.4221 )
+id = 21
+
+[node name="Money3" parent="Ramp4" instance=ExtResource( 3 )]
+position = Vector2( 95.5459, 46.6175 )
+id = 20
+
+[node name="Sticky1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0.0288849, -2082.6 )
+
+[node name="StickWall" parent="Sticky1" instance=ExtResource( 12 )]
+position = Vector2( 28.0945, 146.835 )
+
+[node name="StickWall2" parent="Sticky1" instance=ExtResource( 12 )]
+position = Vector2( 83.531, 74.2085 )
+rotation = 3.14159
+
+[node name="StickWall3" parent="Sticky1" instance=ExtResource( 12 )]
+position = Vector2( 28.1783, 27.5239 )
+
+[node name="Platform" parent="Sticky1" instance=ExtResource( 1 )]
+position = Vector2( 95.2441, 129.373 )
+
+[node name="Platform2" parent="Sticky1" instance=ExtResource( 1 )]
+position = Vector2( 19.9638, 110.805 )
+
+[node name="Platform3" parent="Sticky1" instance=ExtResource( 1 )]
+position = Vector2( 94.2787, 1.94238 )
+
+[node name="Slider" parent="Sticky1" instance=ExtResource( 11 )]
+position = Vector2( 21.2487, 69.9247 )
+
+[node name="Slider2" parent="Sticky1" instance=ExtResource( 11 )]
+position = Vector2( 36.0573, -5.61133 )
+rotation = -1.5708
+
+[node name="Money" parent="Sticky1" instance=ExtResource( 3 )]
+position = Vector2( 40.9937, 150.884 )
+id = 22
+
+[node name="Money2" parent="Sticky1" instance=ExtResource( 3 )]
+position = Vector2( 80.9318, 65.5865 )
+id = 23
+
+[node name="Sticky2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0.0357037, -2255.58 )
+
+[node name="StickWall" parent="Sticky2" instance=ExtResource( 12 )]
+position = Vector2( 98.3953, 116.816 )
+rotation = 3.14159
+
+[node name="StickWall2" parent="Sticky2" instance=ExtResource( 12 )]
+position = Vector2( 15.9885, 92.9307 )
+
+[node name="StickWall3" parent="Sticky2" instance=ExtResource( 12 )]
+position = Vector2( 15.3796, 33.7007 )
+
+[node name="Platform" parent="Sticky2" instance=ExtResource( 1 )]
+position = Vector2( 19.6219, 147.191 )
+
+[node name="Rock" parent="Sticky2" instance=ExtResource( 4 )]
+position = Vector2( 87.857, 154.442 )
+
+[node name="TempPlatform" parent="Sticky2" instance=ExtResource( 5 )]
+position = Vector2( 85.0808, 80.1899 )
+
+[node name="TempPlatform2" parent="Sticky2" instance=ExtResource( 5 )]
+position = Vector2( 95.4752, 25.9734 )
+
+[node name="Money" parent="Sticky2" instance=ExtResource( 3 )]
+position = Vector2( 19.3297, 146.108 )
+id = 24
+
+[node name="Money2" parent="Sticky2" instance=ExtResource( 3 )]
+position = Vector2( 18.2625, 24.9644 )
+id = 25
+
+[node name="Sticky3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0.0341797, -2428.54 )
+
+[node name="TempPlatform" parent="Sticky3" instance=ExtResource( 5 )]
+position = Vector2( 80.3401, 163.356 )
+
+[node name="TempPlatform2" parent="Sticky3" instance=ExtResource( 5 )]
+position = Vector2( 20.9176, 152.938 )
+
+[node name="StickWall" parent="Sticky3" instance=ExtResource( 12 )]
+position = Vector2( 106.819, 100.74 )
+rotation = 3.14159
+
+[node name="Slider" parent="Sticky3" instance=ExtResource( 11 )]
+position = Vector2( 78.0889, 57.6887 )
+rotation = -1.5708
+
+[node name="TempPlatform3" parent="Sticky3" instance=ExtResource( 5 )]
+position = Vector2( 94.5901, 58.2559 )
+
+[node name="Platform" parent="Sticky3" instance=ExtResource( 1 )]
+position = Vector2( 19.9192, 73.001 )
+
+[node name="Platform2" parent="Sticky3" instance=ExtResource( 1 )]
+position = Vector2( 19.9192, 94.001 )
+
+[node name="Platform3" parent="Sticky3" instance=ExtResource( 1 )]
+position = Vector2( 57.2862, 15.8318 )
+
+[node name="Money" parent="Sticky3" instance=ExtResource( 3 )]
+position = Vector2( 79.9227, 154.666 )
+id = 26
+
+[node name="Money2" parent="Sticky3" instance=ExtResource( 3 )]
+position = Vector2( 20.1887, 71.2381 )
+id = 27
+
+[node name="Sticky4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0.0288811, -2601.52 )
+
+[node name="Slider" parent="Sticky4" instance=ExtResource( 11 )]
+position = Vector2( 21.6911, 186.544 )
+
+[node name="Slider2" parent="Sticky4" instance=ExtResource( 11 )]
+position = Vector2( 95.1074, 110.461 )
+rotation = -1.5708
+
+[node name="StickWall" parent="Sticky4" instance=ExtResource( 12 )]
+position = Vector2( 9.72983, 137.705 )
+
+[node name="TempPlatform" parent="Sticky4" instance=ExtResource( 5 )]
+position = Vector2( 43.7034, 121.596 )
+
+[node name="TempPlatform2" parent="Sticky4" instance=ExtResource( 5 )]
+position = Vector2( 67.8555, 93.8235 )
+
+[node name="TempPlatform3" parent="Sticky4" instance=ExtResource( 5 )]
+position = Vector2( 43.287, 55.7351 )
+
+[node name="StickWall2" parent="Sticky4" instance=ExtResource( 12 )]
+position = Vector2( 106.463, 16.3789 )
+rotation = 3.14159
+
+[node name="Slider3" parent="Sticky4" instance=ExtResource( 11 )]
+position = Vector2( 60.7912, 54.4915 )
+
+[node name="Money" parent="Sticky4" instance=ExtResource( 3 )]
+position = Vector2( 42.8812, 113.523 )
+id = 28
+
+[node name="Money2" parent="Sticky4" instance=ExtResource( 3 )]
+position = Vector2( 93.6051, 20.4178 )
+id = 29
+
+[node name="End1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0.0312348, -2774.45 )
+
+[node name="StickWall" parent="End1" instance=ExtResource( 12 )]
+position = Vector2( 9.78978, 158.21 )
+
+[node name="TempPlatform" parent="End1" instance=ExtResource( 5 )]
+position = Vector2( 62.446, 151 )
+
+[node name="TempPlatform2" parent="End1" instance=ExtResource( 5 )]
+position = Vector2( 82.9077, 115.133 )
+
+[node name="TempPlatform3" parent="End1" instance=ExtResource( 5 )]
+position = Vector2( 35.3875, 85.7607 )
+
+[node name="TempPlatform6" parent="End1" instance=ExtResource( 5 )]
+position = Vector2( 95.1365, 35.3525 )
+
+[node name="Slider" parent="End1" instance=ExtResource( 11 )]
+position = Vector2( 20.7652, 112.793 )
+
+[node name="Money" parent="End1" instance=ExtResource( 3 )]
+position = Vector2( 34.6965, 76.9703 )
+id = 30
+
+[node name="Platform" parent="End1" instance=ExtResource( 1 )]
+position = Vector2( 34.9628, 45.6721 )
+
+[node name="End2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0.0299091, -2947.46 )
+
+[node name="Rock" parent="End2" instance=ExtResource( 4 )]
+position = Vector2( 57.2789, -96.8745 )
+
+[node name="END" parent="End2" instance=ExtResource( 7 )]
+position = Vector2( 57.3894, -109.881 )
+
+[node name="Platform" parent="End2" instance=ExtResource( 1 )]
+position = Vector2( 92.6535, -86.9268 )
+
+[node name="TempPlatform7" parent="End2" instance=ExtResource( 5 )]
+position = Vector2( 80.4222, 179.352 )
+
+[node name="TempPlatform8" parent="End2" instance=ExtResource( 5 )]
+position = Vector2( 32.3198, 156.915 )
+
+[node name="TempPlatform9" parent="End2" instance=ExtResource( 5 )]
+position = Vector2( 62.1577, 114.828 )
+
+[node name="Slider" parent="End2" instance=ExtResource( 11 )]
+position = Vector2( 94.4941, 119.063 )
+rotation = -1.5708
+
+[node name="Platform2" parent="End2" instance=ExtResource( 1 )]
+position = Vector2( 66.2711, 72.5417 )
+
+[node name="Platform7" parent="End2" instance=ExtResource( 1 )]
+position = Vector2( 50.794, 72.1448 )
+
+[node name="Platform3" parent="End2" instance=ExtResource( 1 )]
+position = Vector2( 42.5562, 39.6033 )
+
+[node name="Platform4" parent="End2" instance=ExtResource( 1 )]
+position = Vector2( 71.5892, 11.427 )
+
+[node name="Platform5" parent="End2" instance=ExtResource( 1 )]
+position = Vector2( 46.1593, -14.3682 )
+
+[node name="Platform6" parent="End2" instance=ExtResource( 1 )]
+position = Vector2( 67.9705, -53.6121 )
+
+[node name="Money" parent="End2" instance=ExtResource( 3 )]
+position = Vector2( 79.7343, 171.071 )
+id = 31
+
+[node name="Money2" parent="End2" instance=ExtResource( 3 )]
+position = Vector2( 62.029, 105.504 )
+id = 32
+
+[node name="Left" type="StaticBody2D" parent="."]
+position = Vector2( 0, -1118 )
+
+[node name="Hitbox" type="CollisionShape2D" parent="Left"]
+position = Vector2( 2.33335, 0 )
+shape = SubResource( 9 )
+one_way_collision_margin = 0.0
+
+[node name="Sprite" type="Sprite" parent="Left"]
+position = Vector2( 3.08044, -1819.6 )
+rotation = -1.5708
+texture = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Left/Sprite"]
+show_behind_parent = true
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+position = Vector2( 26.8079, 410.475 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Left"]
+position = Vector2( -14.9282, -1955.05 )
+shape = SubResource( 11 )
+
+[node name="Right2" type="StaticBody2D" parent="."]
+position = Vector2( 109.882, -1117.88 )
+
+[node name="Hitbox" type="CollisionShape2D" parent="Right2"]
+position = Vector2( 2.33335, 0 )
+shape = SubResource( 9 )
+
+[node name="Sprite2" type="Sprite" parent="Right2"]
+position = Vector2( 1.51326, -1820.07 )
+rotation = 3.14159
+texture = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Right2/Sprite2"]
+show_behind_parent = true
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Right2"]
+position = Vector2( 19.1898, -1955.17 )
+shape = SubResource( 11 )
+
+[node name="Vanish" type="AnimationPlayer" parent="."]
+anims/On = SubResource( 12 )
+anims/Vanish = SubResource( 13 )
+
+[node name="VanishOn" type="Area2D" parent="."]
+position = Vector2( 0, -24 )
+
+[node name="Detection" type="CollisionShape2D" parent="VanishOn"]
+position = Vector2( 56.2881, -2645.84 )
+shape = SubResource( 14 )
+
+[node name="Line1" type="Node2D" parent="VanishOn"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 0.822723, -2372.79 )
+
+[node name="plat" type="Sprite" parent="VanishOn/Line1"]
+position = Vector2( 19, 0 )
+texture = ExtResource( 14 )
+
+[node name="plat2" type="Sprite" parent="VanishOn/Line1"]
+position = Vector2( 34, 0 )
+texture = ExtResource( 14 )
+
+[node name="plat3" type="Sprite" parent="VanishOn/Line1"]
+position = Vector2( 49, 0 )
+texture = ExtResource( 14 )
+
+[node name="plat4" type="Sprite" parent="VanishOn/Line1"]
+position = Vector2( 64, 0 )
+texture = ExtResource( 14 )
+
+[node name="plat5" type="Sprite" parent="VanishOn/Line1"]
+position = Vector2( 79, 0 )
+texture = ExtResource( 14 )
+
+[node name="plat6" type="Sprite" parent="VanishOn/Line1"]
+position = Vector2( 94, 0 )
+texture = ExtResource( 14 )
+
+[node name="Line2" type="Node2D" parent="VanishOn"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 0.822723, -2920.79 )
+
+[node name="plat" type="Sprite" parent="VanishOn/Line2"]
+position = Vector2( 19, 0 )
+texture = ExtResource( 14 )
+
+[node name="plat2" type="Sprite" parent="VanishOn/Line2"]
+position = Vector2( 34, 0 )
+texture = ExtResource( 14 )
+
+[node name="plat3" type="Sprite" parent="VanishOn/Line2"]
+position = Vector2( 49, 0 )
+texture = ExtResource( 14 )
+
+[node name="plat4" type="Sprite" parent="VanishOn/Line2"]
+position = Vector2( 64, 0 )
+texture = ExtResource( 14 )
+
+[node name="plat5" type="Sprite" parent="VanishOn/Line2"]
+position = Vector2( 79, 0 )
+texture = ExtResource( 14 )
+
+[node name="plat6" type="Sprite" parent="VanishOn/Line2"]
+position = Vector2( 94, 0 )
+texture = ExtResource( 14 )
+[connection signal="body_entered" from="VanishOn" to="." method="_on_VanishOn_body_entered"]
+[connection signal="body_exited" from="VanishOn" to="." method="_on_VanishOn_body_exited"]

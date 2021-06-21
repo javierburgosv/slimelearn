@@ -1,0 +1,294 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Graphics/UI/uiMenuV1.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/UI/Money.png" type="Texture" id=5]
+[ext_resource path="res://Elements/GUI/UI.gd" type="Script" id=6]
+[ext_resource path="res://Fonts/Kenney Pixel.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Graphics/Objects/Currency-1.png.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/UI/menu.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/UI/Music.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/UI/Sound.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/UI/ExitMenu.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/UI/panelbg.png" type="Texture" id=15]
+[ext_resource path="res://Fonts/Kenney Mini.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://Graphics/UI/no.png" type="Texture" id=25]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 7
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 8
+font_data = ExtResource( 17 )
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BgGp" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -64.0
+margin_top = -2.0
+margin_right = 64.0
+margin_bottom = 30.0
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg2" type="TextureRect" parent="BgGp"]
+margin_left = 32.0
+margin_right = 64.0
+margin_bottom = 37.0
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg3" type="TextureRect" parent="BgGp"]
+margin_left = 64.0
+margin_right = 96.0
+margin_bottom = 37.0
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg4" type="TextureRect" parent="BgGp"]
+margin_left = 96.0
+margin_right = 128.0
+margin_bottom = 37.0
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -52.0
+margin_top = 5.0
+margin_right = -4.0
+margin_bottom = 21.0
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="value" type="RichTextLabel" parent="Money"]
+anchor_left = 0.279
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.608
+margin_top = 1.0
+margin_right = -3.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="Sprite" parent="Money"]
+position = Vector2( 8, 8 )
+texture = ExtResource( 9 )
+
+[node name="Pause" type="TextureButton" parent="."]
+margin_left = 4.0
+margin_top = 5.0
+margin_right = 20.0
+margin_bottom = 21.0
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMenu" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -48.0
+margin_top = -28.0
+margin_right = 48.0
+margin_bottom = 28.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="TextureButton" parent="PauseMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 34.0
+margin_top = -34.0
+margin_right = 54.0
+margin_bottom = -14.0
+texture_normal = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound" type="TextureButton" parent="PauseMenu"]
+margin_left = 14.1716
+margin_top = 28.3689
+margin_right = 30.1716
+margin_bottom = 44.3689
+texture_normal = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music" type="TextureButton" parent="PauseMenu"]
+margin_left = 40.0828
+margin_top = 27.897
+margin_right = 56.0828
+margin_bottom = 43.897
+texture_normal = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reset" type="TextureButton" parent="PauseMenu"]
+margin_left = 65.0828
+margin_top = 27.897
+margin_right = 81.0828
+margin_bottom = 43.897
+texture_normal = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PauseMenu"]
+margin_left = 8.0
+margin_top = 10.0
+margin_right = 88.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 2 )
+text = "OPTIONS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoWall" type="TextureRect" parent="PauseMenu"]
+show_behind_parent = true
+margin_left = -11.0
+margin_top = -3.0
+margin_right = 29.0
+margin_bottom = 37.0
+mouse_filter = 2
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoWall2" type="TextureRect" parent="PauseMenu"]
+show_behind_parent = true
+margin_left = -11.0
+margin_top = 14.0
+margin_right = 29.0
+margin_bottom = 54.0
+mouse_filter = 2
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoWall3" type="TextureRect" parent="PauseMenu"]
+show_behind_parent = true
+margin_left = 21.0
+margin_top = 60.0
+margin_right = 61.0
+margin_bottom = 100.0
+rect_rotation = -179.535
+mouse_filter = 2
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoWall6" type="TextureRect" parent="PauseMenu"]
+show_behind_parent = true
+margin_left = 76.0904
+margin_top = -2.86518
+margin_right = 116.09
+margin_bottom = 37.1348
+mouse_filter = 2
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoWall5" type="TextureRect" parent="PauseMenu"]
+show_behind_parent = true
+margin_left = 76.3283
+margin_top = 18.8539
+margin_right = 116.328
+margin_bottom = 58.8539
+mouse_filter = 2
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoWall4" type="TextureRect" parent="PauseMenu"]
+show_behind_parent = true
+margin_left = 108.371
+margin_top = 59.94
+margin_right = 148.371
+margin_bottom = 99.94
+rect_rotation = -179.535
+mouse_filter = 2
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Version" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0.231373 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -56.0
+margin_top = -12.0
+margin_bottom = 9.0
+custom_fonts/font = SubResource( 3 )
+text = "Server 0.9.5
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="time" type="RichTextLabel" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -44.0
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="Pause" to="." method="_on_Pause_button_down"]
+[connection signal="button_down" from="PauseMenu/Resume" to="." method="_on_Resume_button_down"]
+[connection signal="button_down" from="PauseMenu/Sound" to="." method="_on_Sound_button_down"]
+[connection signal="button_down" from="PauseMenu/Music" to="." method="_on_Music_button_down"]
+[connection signal="button_down" from="PauseMenu/Reset" to="." method="_on_Reset_button_down"]

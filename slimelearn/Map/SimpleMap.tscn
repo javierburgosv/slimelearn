@@ -1,0 +1,309 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Elements/Map/Screen_Left.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Elements/Map/Screen_Right.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Elements/Objects/Platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Graphics/Map/suelo.png" type="Texture" id=4]
+[ext_resource path="res://Elements/Objects/Rock.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Graphics/Objects/End.png" type="Texture" id=6]
+[ext_resource path="res://Elements/Objects/Money.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 694.468 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 56, 8 )
+
+[node name="SimpleMap" type="Node2D"]
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2( 111.297, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Right" parent="RightWall" instance=ExtResource( 2 )]
+position = Vector2( 0, 9.47397 )
+
+[node name="Right2" parent="RightWall" instance=ExtResource( 2 )]
+position = Vector2( 0, -164.526 )
+
+[node name="Right3" parent="RightWall" instance=ExtResource( 2 )]
+position = Vector2( 0, -338.526 )
+
+[node name="Right4" parent="RightWall" instance=ExtResource( 2 )]
+position = Vector2( 0, -512.526 )
+
+[node name="Right5" parent="RightWall" instance=ExtResource( 2 )]
+position = Vector2( 0, -686.526 )
+
+[node name="Right6" parent="RightWall" instance=ExtResource( 2 )]
+position = Vector2( 0, -860.526 )
+
+[node name="Right7" parent="RightWall" instance=ExtResource( 2 )]
+position = Vector2( 0, -1034.53 )
+
+[node name="Right8" parent="RightWall" instance=ExtResource( 2 )]
+position = Vector2( 0, -1208.53 )
+
+[node name="RightWallHtibox2" type="CollisionShape2D" parent="RightWall"]
+position = Vector2( 2.7, -523.481 )
+shape = SubResource( 1 )
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Left" parent="LeftWall" instance=ExtResource( 1 )]
+
+[node name="Left2" parent="LeftWall" instance=ExtResource( 1 )]
+position = Vector2( 3.06338, -6.2 )
+
+[node name="Left3" parent="LeftWall" instance=ExtResource( 1 )]
+position = Vector2( 3.06338, -180.2 )
+
+[node name="Left4" parent="LeftWall" instance=ExtResource( 1 )]
+position = Vector2( 3.06338, -343.2 )
+
+[node name="Left5" parent="LeftWall" instance=ExtResource( 1 )]
+position = Vector2( 3.06338, -517.2 )
+
+[node name="Left6" parent="LeftWall" instance=ExtResource( 1 )]
+position = Vector2( 3.06338, -691.2 )
+
+[node name="Left7" parent="LeftWall" instance=ExtResource( 1 )]
+position = Vector2( 3.06338, -865.2 )
+
+[node name="Left8" parent="LeftWall" instance=ExtResource( 1 )]
+position = Vector2( 3.06338, -1039.2 )
+
+[node name="LeftWallHtibox" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2( -2, -523 )
+shape = SubResource( 1 )
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2( 0, 168 )
+
+[node name="Tile" type="Sprite" parent="Floor"]
+position = Vector2( 0, 8 )
+texture = ExtResource( 4 )
+
+[node name="Tile2" type="Sprite" parent="Floor"]
+position = Vector2( 16, 8 )
+texture = ExtResource( 4 )
+
+[node name="Tile3" type="Sprite" parent="Floor"]
+position = Vector2( 32, 8 )
+texture = ExtResource( 4 )
+
+[node name="Tile4" type="Sprite" parent="Floor"]
+position = Vector2( 48, 8 )
+texture = ExtResource( 4 )
+
+[node name="Tile5" type="Sprite" parent="Floor"]
+position = Vector2( 64, 8 )
+texture = ExtResource( 4 )
+
+[node name="Tile6" type="Sprite" parent="Floor"]
+position = Vector2( 80, 8 )
+texture = ExtResource( 4 )
+
+[node name="Tile7" type="Sprite" parent="Floor"]
+position = Vector2( 96, 8 )
+texture = ExtResource( 4 )
+
+[node name="Tile8" type="Sprite" parent="Floor"]
+position = Vector2( 112, 8 )
+texture = ExtResource( 4 )
+
+[node name="FloorHitbox" type="CollisionShape2D" parent="Floor"]
+position = Vector2( 56, 8 )
+shape = SubResource( 2 )
+
+[node name="Platform" parent="." instance=ExtResource( 3 )]
+position = Vector2( 15.8745, 135.685 )
+
+[node name="Platform2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 55.8745, 111.685 )
+
+[node name="Platform3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 95.8745, 95.685 )
+
+[node name="Platform4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 76.512, 58.3631 )
+
+[node name="Platform5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 94.1908, 24.4087 )
+
+[node name="Platform6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 94.1908, -6.59133 )
+
+[node name="Platform7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 17.1908, -8.59133 )
+
+[node name="Platform9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 16.5608, -68.7526 )
+
+[node name="Platform10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 49.6338, -94.5809 )
+
+[node name="Platform11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 16.9302, -135.294 )
+
+[node name="Platform12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 91.0138, -156.651 )
+
+[node name="Platform13" parent="." instance=ExtResource( 3 )]
+position = Vector2( 58.6393, -197.014 )
+
+[node name="Platform14" parent="." instance=ExtResource( 3 )]
+position = Vector2( 19.7484, -253.936 )
+
+[node name="Platform33" parent="." instance=ExtResource( 3 )]
+position = Vector2( 47.1311, -233.697 )
+
+[node name="Platform15" parent="." instance=ExtResource( 3 )]
+position = Vector2( 95.4089, -286.109 )
+
+[node name="Platform16" parent="." instance=ExtResource( 3 )]
+position = Vector2( 56.3663, -293.144 )
+
+[node name="Platform17" parent="." instance=ExtResource( 3 )]
+position = Vector2( 66.771, -331.718 )
+
+[node name="Platform18" parent="." instance=ExtResource( 3 )]
+position = Vector2( 93.9946, -348.689 )
+
+[node name="Platform19" parent="." instance=ExtResource( 3 )]
+position = Vector2( 45.2227, -376.859 )
+
+[node name="Platform20" parent="." instance=ExtResource( 3 )]
+position = Vector2( 18.4957, -411.158 )
+
+[node name="Platform21" parent="." instance=ExtResource( 3 )]
+position = Vector2( 35.4228, -411.158 )
+
+[node name="Platform22" parent="." instance=ExtResource( 3 )]
+position = Vector2( 93.3312, -433.431 )
+
+[node name="Platform23" parent="." instance=ExtResource( 3 )]
+position = Vector2( 76.4041, -433.431 )
+
+[node name="Platform24" parent="." instance=ExtResource( 3 )]
+position = Vector2( 55.9134, -462.83 )
+
+[node name="Platform25" parent="." instance=ExtResource( 3 )]
+position = Vector2( 56.3854, -499.641 )
+
+[node name="Platform26" parent="." instance=ExtResource( 3 )]
+position = Vector2( 91.7807, -522.294 )
+
+[node name="Platform27" parent="." instance=ExtResource( 3 )]
+position = Vector2( 19.1024, -522.766 )
+
+[node name="Platform28" parent="." instance=ExtResource( 3 )]
+position = Vector2( 45.0589, -566.184 )
+
+[node name="Platform29" parent="." instance=ExtResource( 3 )]
+position = Vector2( 63.4644, -566.656 )
+
+[node name="Platform30" parent="." instance=ExtResource( 3 )]
+position = Vector2( 91.1437, -597.301 )
+
+[node name="Platform31" parent="." instance=ExtResource( 3 )]
+position = Vector2( 63.7996, -615.655 )
+
+[node name="Platform32" parent="." instance=ExtResource( 3 )]
+position = Vector2( 56.375, -661.264 )
+
+[node name="Platform34" parent="." instance=ExtResource( 3 )]
+position = Vector2( 45.6569, -720.034 )
+
+[node name="Platform35" parent="." instance=ExtResource( 3 )]
+position = Vector2( 63.0568, -793.562 )
+
+[node name="Platform36" parent="." instance=ExtResource( 3 )]
+position = Vector2( 69.05, -940.022 )
+
+[node name="Platform37" parent="." instance=ExtResource( 3 )]
+position = Vector2( 45.1115, -1016.88 )
+
+[node name="Platform38" parent="." instance=ExtResource( 3 )]
+position = Vector2( 79.7593, -1035.78 )
+
+[node name="Platform8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 50.6969, -50.3903 )
+
+[node name="Rock" parent="." instance=ExtResource( 5 )]
+position = Vector2( 18.3854, -688.889 )
+
+[node name="Rock2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 78.5211, -753.314 )
+
+[node name="Rock14" parent="." instance=ExtResource( 5 )]
+position = Vector2( 18.75, -742.09 )
+
+[node name="Rock3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 89.6573, -814.506 )
+
+[node name="Rock4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 37.9852, -835.887 )
+
+[node name="Rock5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 18.8308, -872.86 )
+
+[node name="Rock6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 68.2757, -900.923 )
+
+[node name="Rock7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 92.8804, -964.022 )
+
+[node name="Rock8" parent="." instance=ExtResource( 5 )]
+position = Vector2( 18.2726, -982.277 )
+
+[node name="Rock9" parent="." instance=ExtResource( 5 )]
+position = Vector2( 94.9764, -1058.39 )
+
+[node name="Rock10" parent="." instance=ExtResource( 5 )]
+position = Vector2( 72.1296, -1094.45 )
+
+[node name="Rock11" parent="." instance=ExtResource( 5 )]
+position = Vector2( 94.9764, -1131.12 )
+
+[node name="Rock12" parent="." instance=ExtResource( 5 )]
+position = Vector2( 17.7526, -1154.48 )
+
+[node name="Rock13" parent="." instance=ExtResource( 5 )]
+position = Vector2( 58.2313, -1197.74 )
+
+[node name="End" type="Sprite" parent="."]
+position = Vector2( 58.3641, -1211.9 )
+texture = ExtResource( 6 )
+
+[node name="Money" parent="." instance=ExtResource( 7 )]
+position = Vector2( 94.8233, -288.736 )
+
+[node name="Money2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 94.296, -390.168 )
+id = 1
+
+[node name="Money3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 17.2948, -413.952 )
+id = 2
+
+[node name="Money4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 19.0766, -526.035 )
+id = 3
+
+[node name="Money5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 15.0924, -806.147 )
+id = 4
+
+[node name="Money6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 94.6419, -1068.84 )
+id = 5
+
+[node name="Money7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 17.2137, -1165.71 )
+id = 6

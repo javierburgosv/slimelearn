@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/floorhit.wav-702d855bc2324005bbb992a0cb521dfd.sample"
+
+[deps]
+
+source_file="res://Sound/floorhit.wav"
+dest_files=[ "res://.import/floorhit.wav-702d855bc2324005bbb992a0cb521dfd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

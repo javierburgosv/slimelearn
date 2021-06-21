@@ -1,0 +1,81 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Graphics/Player/jumpdown2.png" type="Texture" id=1]
+[ext_resource path="res://Graphics/Player/player_02.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Player/jumpup2.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Player/jumpup.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Player/player_idle.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Player/player_01.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Player/jump01.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Player/jumpdown.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Player/arrow.png" type="Texture" id=9]
+[ext_resource path="res://Elements/Player/Player.gd" type="Script" id=10]
+[ext_resource path="res://Graphics/Player/colgado2.png" type="Texture" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "jumpUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "charge",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "jumpDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "wall",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5.47877, 6.84184 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 4.02654, 9.46438 )
+
+[node name="Player" type="KinematicBody2D"]
+collision_layer = 17
+collision_mask = 17
+script = ExtResource( 10 )
+
+[node name="Skin" type="AnimatedSprite" parent="."]
+position = Vector2( -8, -11.685 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2( 0.22054, -2.34495 )
+shape = SubResource( 2 )
+
+[node name="ArrowContainer" type="Area2D" parent="."]
+position = Vector2( 0.0319996, -0.0230589 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Arrow" type="Sprite" parent="ArrowContainer"]
+position = Vector2( -0.191528, -15.1332 )
+texture = ExtResource( 9 )
+
+[node name="Influence" type="CollisionShape2D" parent="ArrowContainer"]
+position = Vector2( -0.0897484, -9.7182 )
+shape = SubResource( 3 )
+[connection signal="body_entered" from="ArrowContainer" to="." method="_on_ArrowContainer_body_entered"]

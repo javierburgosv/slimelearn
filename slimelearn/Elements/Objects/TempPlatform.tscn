@@ -1,0 +1,81 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Graphics/Map/tempPlatAnim/tp2.png" type="Texture" id=1]
+[ext_resource path="res://Graphics/Map/TempPlat2.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Map/tempPlatAnim/tp3.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Map/tempPlatAnim/tp4.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Map/tempPlatAnim/tp5.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Map/tempPlatAnim/tp6.png" type="Texture" id=6]
+[ext_resource path="res://Elements/Objects/TempPlatform.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.20095, 2.5442 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "destroy",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 6.94031, 2.32418 )
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0.0148148, 0.162963, 1 )
+colors = PoolColorArray( 0.168627, 0.168627, 0.168627, 0, 0.925926, 0.925926, 0.925926, 1, 0.984314, 0.505882, 0.247059, 0.0392157 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+emission_shape = 2
+emission_box_extents = Vector3( 7.6, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 10, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 1.0
+color_ramp = SubResource( 5 )
+
+[node name="TempPlatform" type="StaticBody2D"]
+script = ExtResource( 7 )
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="area" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2( 0, -6.781 )
+shape = SubResource( 3 )
+
+[node name="Effect" type="Particles2D" parent="."]
+position = Vector2( -0.0175152, -0.638315 )
+amount = 3
+process_material = SubResource( 6 )
+
+[node name="Clock" type="Timer" parent="."]
+wait_time = 0.4
+
+[node name="DifCheck" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_PlayerDetection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_PlayerDetection_body_exited"]
+[connection signal="timeout" from="Clock" to="." method="_on_Clock_timeout"]
+[connection signal="timeout" from="DifCheck" to="." method="_on_DifCheck_timeout"]

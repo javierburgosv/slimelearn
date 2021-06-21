@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Elements/Objects/mplatFollow.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Elements/Objects/Mplat.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -18.5308, -0.13714, 0, 0, 0, 0, 19.8543, 0.0345764 )
+}
+
+[node name="mplat" type="Path2D"]
+curve = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="mplatFollow" parent="." instance=ExtResource( 1 )]
