@@ -35,6 +35,7 @@ Download the source code by clicking on Code > Download Zip on the top right, or
 git clone https://github.com/javierburgosv/slimelearn.git
 ```
 
+<br>
 How to use
 ----------
 SlimeLearn requires you to craft some short of agent or code that sends the instructions to the framework in order to play. This comunication
@@ -57,6 +58,7 @@ The instructions have to be in form of strings, in json format with some specifi
 
 For reference, check out the [slimelearn.py source code](https://github.com/javierburgosv/slimelearn.py/blob/main/slimelearnpy/slimelearn.py). 
 
+<br>
 Requests
 ----------
 Requests have this format:
@@ -127,6 +129,7 @@ This action helps the agent restart the position of the player to the starting p
 }
 ```
 
+<br>
 Responses
 ----------
 Server responses have this format:
@@ -142,6 +145,7 @@ Server responses have this format:
 
 ### Status Responses
 This type of message is sent by the server as a response to some requests. This serve as a control measure to see if the comunications are taking place correctly.
+
 
 **OK Response**
 ```JSON
