@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="JumpSlime AI Learn"
+config/name="SlimeLearn"
 run/main_scene="res://Map/Map.tscn"
 boot_splash/image="res://Graphics/UI/splash.png"
 boot_splash/bg_color=Color( 0.984314, 0.505882, 0.247059, 1 )
